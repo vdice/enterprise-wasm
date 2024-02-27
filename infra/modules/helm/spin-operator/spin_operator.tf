@@ -4,6 +4,7 @@ resource "kubernetes_namespace" "spin_operator" {
   }
 }
 
+# TODO: fetch from canonical source or GH release, etc
 resource "kubectl_manifest" "spin_operator_crds" {
     yaml_body = file("${path.module}/crds.yaml")
 }
